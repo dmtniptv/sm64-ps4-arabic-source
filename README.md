@@ -1,5 +1,10 @@
 # Super Mario 64 PS4 — Arabic Localization
 
+**Arabic Edition · For jailbroken PS4 only**  
+*Translated by Abstars*
+
+![Mario on the Arabic edition’s PS4 title screen](title-screen.png)
+
 **سوبر ماريو 64 على بلايستيشن 4 باللغة العربية**
 
 تعريب من **ABSTARS**، أُعد بالتعاون مع **ChatGPT**. يضم المشروع جميع حوارات اللعبة البالغ عددها 170، إلى جانب أسماء المراحل والنجوم والقوائم ورسالة الأميرة بيتش وترجمة مشاهد النهاية.
@@ -8,7 +13,7 @@ An Arabic localization of the US Super Mario 64 PS4 port. It includes all **170 
 
 ABSTARS tested and approved the final localization build on PS4. The original “POWER” artwork remains in the health meter.
 
-**Platform requirement:** A jailbroken PS4 configured to run homebrew packages. هذا الإصدار مخصص لأجهزة بلايستيشن 4 المعدلة لتشغيل حزم الهومبرو.
+**PS4 only.** This edition requires a jailbroken PS4 configured to run homebrew packages. هذا الإصدار مخصص حصرا لأجهزة بلايستيشن 4 المعدلة لتشغيل حزم الهومبرو.
 
 ## Build from source
 
