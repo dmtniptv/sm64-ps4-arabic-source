@@ -1,19 +1,39 @@
-# Super Mario 64 PS4 — Arabic Localization
+# سوبر ماريو 64 بالعربية على PS4 — الإصدار 1.0
 
 **Arabic Edition · For jailbroken PS4 only**  
 *Translated by Abstars*
 
-![Mario on the Arabic edition’s PS4 title screen](title-screen.png)
+![غلاف سوبر ماريو 64، النسخة العربية على بلايستيشن 4](images/cover.png)
 
-**سوبر ماريو 64 على بلايستيشن 4 باللغة العربية**
+من رسالة الأميرة بيتش إلى آخر نجمة قوة، يمكنك استكشاف عالم **سوبر ماريو 64** وقراءة حواراته وقوائمه بالعربية. هذا تعريب غير رسمي لنسخة اللعبة الأمريكية على بلايستيشن 4، من إعداد **ABSTARS** بالتعاون مع **ChatGPT**.
 
-تعريب من **ABSTARS**، أُعد بالتعاون مع **ChatGPT**. يضم المشروع جميع حوارات اللعبة البالغ عددها 170، إلى جانب أسماء المراحل والنجوم والقوائم ورسالة الأميرة بيتش وترجمة مشاهد النهاية.
+- **170 حوارا و90 عنوان مهمة و24 اسم مرحلة**، مع قوائم عربية لاختيار الملفات والمراحل، والإيقاف المؤقت، والحفظ.
+- حروف عربية متصلة من اليمين إلى اليسار وخلفيات عالية التباين تسهّل القراءة على التلفاز.
+- تعليمات بأزرار يد تحكم PS4، وترجمة لنصوص النهاية وأسماء فريق العمل.
 
 An Arabic localization of the US Super Mario 64 PS4 port. It includes all **170 dialogs**, **90 mission titles**, **24 named stages**, file and pause menus, Peach’s letter, ending subtitles, and staff credits. Dialogs use right-to-left layout, connected Arabic lettering, higher-resolution text textures, and opaque boxes to help players read from a TV viewing distance. Instructions use PS4 controls, including ×, □, L1, R1, the right stick, and OPTIONS.
 
 ABSTARS tested and approved the final localization build on PS4. The original “POWER” artwork remains in the health meter.
 
 **PS4 only.** This edition requires a jailbroken PS4 configured to run homebrew packages. هذا الإصدار مخصص حصرا لأجهزة بلايستيشن 4 المعدلة لتشغيل حزم الهومبرو.
+
+## شاشة التشغيل النهائية · Final launch splash
+
+![صورة ماريو الأصلية مع عنوان النسخة العربية وتعريب ABSTARS](images/launch-splash.png)
+
+## من داخل اللعبة · PS4 screenshots
+
+**رسالة الأميرة بيتش · Peach’s letter**
+
+![رسالة الأميرة بيتش بالعربية](images/peach-letter.png)
+
+**الترحيب عند القلعة · Castle welcome**
+
+![حوار الترحيب بخلفية داكنة](images/castle-welcome.png)
+
+**لافتة القلعة · Castle sign**
+
+![تعليمات القفز والانحناء بخلفية فاتحة](images/castle-sign.png)
 
 ## Build from source
 
@@ -35,7 +55,7 @@ Place your `baserom.us.z64` in the port's root directory, then run:
 make -j2 VERSION=us TARGET_PS4=1 ARABIC=1 pkg
 ```
 
-The generated package goes in `build/`. The public patch uses the upstream package icon. ROMs, extracted game assets, and prebuilt packages are kept out of this repository.
+The generated package goes in `build/`. The patch matches the final localization from `ef4d68f` and uses the upstream package artwork. The cover and splash above are previews. ROMs and prebuilt packages are kept out of this repository.
 
 ## Credits
 
