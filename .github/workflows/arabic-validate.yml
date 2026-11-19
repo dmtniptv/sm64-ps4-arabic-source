@@ -1,0 +1,38 @@
+name: Arabic localization validation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Reject proprietary game inputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-files | grep -E '(^|/)(baserom\..*\.z64|.*\.pkg)$'; then
+            echo 'ROM and PKG files must never be committed.' >&2
+            exit 1
+          fi
+      - name: Test Arabic shaping
+        run: |
+          node tools/arabic/shape-text.test.mjs
+          node tools/arabic/verify-font.mjs /tmp/arabic-font-preview.svg
+          node tools/arabic/verify-dialog-textures.mjs /tmp/arabic-dialog-preview.svg
+          node tools/arabic/verify-ui-textures.mjs
+          node tools/arabic/verify-coverage.mjs
+      - name: Regenerate translated text tables
+        run: |
+          node tools/arabic/build-dialogs.mjs
+          node tools/arabic/build-courses.mjs
+          node tools/arabic/build-strings.mjs
+          node tools/arabic/build-overlay-labels.mjs
+      - name: Verify generated files are current
+        run: git diff --exit-code -- text/ar/dialogs.h text/ar/courses.h text/ar/generated/text_strings.h text/ar/generated/overlay-labels.json

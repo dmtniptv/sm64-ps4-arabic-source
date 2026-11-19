@@ -1,0 +1,884 @@
+{
+  "overlay_course_0": {
+    "text": "ساحة معركة بوب-أومب",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_course_1": {
+    "text": "حصن وومب",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_course_2": {
+    "text": "خليج القراصنة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_course_3": {
+    "text": "الجبل الجليدي",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_course_4": {
+    "text": "قصر بو الكبير",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_course_5": {
+    "text": "كهف المتاهة الضبابية",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_course_6": {
+    "text": "أرض الحمم المميتة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_course_7": {
+    "text": "أرض الرمال المتحركة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_course_8": {
+    "text": "الأرصفة الخطرة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_course_9": {
+    "text": "أرض رجل الثلج",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_course_10": {
+    "text": "عالم البلل والجفاف",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_course_11": {
+    "text": "الجبل الشاهق",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_course_12": {
+    "text": "جزيرة الصغير والعملاق",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_course_13": {
+    "text": "ساعة تيك توك",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_course_14": {
+    "text": "رحلة قوس قزح",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_bonus_0": {
+    "text": "باوزر في العالم المظلم",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_bonus_1": {
+    "text": "باوزر في بحر النار",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_bonus_2": {
+    "text": "باوزر في السماء",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_bonus_3": {
+    "text": "منزلق الأميرة السري",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_bonus_4": {
+    "text": "كهف القبعة المعدنية",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_bonus_5": {
+    "text": "برج قبعة الطيران",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_bonus_6": {
+    "text": "قبعة الاختفاء تحت الخندق",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_bonus_7": {
+    "text": "ماريو الطائر فوق قوس قزح",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_bonus_8": {
+    "text": "الحوض السري",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_bonus_9": {
+    "text": "النهاية",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_0": {
+    "text": "قنبلة بوب-أومب الكبيرة فوق القمة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_1": {
+    "text": "سباق مع كوبا السريع",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_2": {
+    "text": "أطلق نحو الجزيرة في السماء",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_3": {
+    "text": "اعثر على العملات الحمراء الثماني",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_4": {
+    "text": "ماريو المجنح نحو السماء",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_5": {
+    "text": "خلف بوابة تشين تشومب",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_6": {
+    "text": "حطم كتلة وومب",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_7": {
+    "text": "إلى قمة الحصن",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_8": {
+    "text": "أطلق نحو الزرقة البعيدة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_9": {
+    "text": "عملات حمراء في الجزيرة العائمة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_10": {
+    "text": "اهبط فوق الجزيرة المحاطة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_11": {
+    "text": "فجر الجدار",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_12": {
+    "text": "غنيمة السفينة الغارقة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_13": {
+    "text": "هل يخرج الأنقليس للعب؟",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_14": {
+    "text": "كنز كهف المحيط",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_15": {
+    "text": "عملات حمراء فوق السفينة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_16": {
+    "text": "أطلق نحو العمود الحجري",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_17": {
+    "text": "اعبر التيار النفاث",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_18": {
+    "text": "انزلق بعيدا",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_19": {
+    "text": "البطريق الصغير الضائع",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_20": {
+    "text": "سباق البطريق الكبير",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_21": {
+    "text": "منزلق جليدي لثماني عملات حمراء",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_22": {
+    "text": "رجل الثلج فقد رأسه",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_23": {
+    "text": "ركلات الجدار تنجح",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_24": {
+    "text": "انطلق لصيد الأشباح",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_25": {
+    "text": "اركب دوامة بو الكبير",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_26": {
+    "text": "سر الكتب المسكونة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_27": {
+    "text": "ابحث عن العملات الحمراء الثماني",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_28": {
+    "text": "شرفة بو الكبير",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_29": {
+    "text": "وجها لوجه في الغرفة السرية",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_30": {
+    "text": "وحش سابح في الكهف",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_31": {
+    "text": "المصعد إلى ثماني عملات حمراء",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_32": {
+    "text": "ماريو المعدني يستطيع الحركة!",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_33": {
+    "text": "اجتز المتاهة السامة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_34": {
+    "text": "مخرج طوارئ مذهل",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_35": {
+    "text": "احذر الصخور المتدحرجة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_36": {
+    "text": "اقهر المتنمر الكبير",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_37": {
+    "text": "تنمر على المتنمرين",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_38": {
+    "text": "لغز ثماني العملات في 15 قطعة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_39": {
+    "text": "دحرجة الجذع الملتهب",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_40": {
+    "text": "أسرع إلى داخل البركان",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_41": {
+    "text": "جولة المصعد داخل البركان",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_42": {
+    "text": "بين مخالب الطائر الكبير",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_43": {
+    "text": "بريق فوق الهرم",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_44": {
+    "text": "داخل الهرم القديم",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_45": {
+    "text": "قف شامخا فوق الأعمدة الأربعة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_46": {
+    "text": "تحليق حر لثماني عملات حمراء",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_47": {
+    "text": "لغز الهرم",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_48": {
+    "text": "اصعد غواصة باوزر",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_49": {
+    "text": "صناديق في التيار",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_50": {
+    "text": "اقفز بين الأعمدة للعملات الحمراء",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_51": {
+    "text": "اعبر التيار النفاث",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_52": {
+    "text": "مكافأة سمكة المانتا",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_53": {
+    "text": "اجمع القبعات...",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_54": {
+    "text": "رأس رجل الثلج الكبير",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_55": {
+    "text": "برد المتنمر",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_56": {
+    "text": "في قلب التجمد",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_57": {
+    "text": "در حول البركة المتجمدة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_58": {
+    "text": "تزلج بالصدفة للعملات الحمراء",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_59": {
+    "text": "إلى داخل الكوخ الجليدي",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_60": {
+    "text": "مصاعد الأسهم الصاعقة!",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_61": {
+    "text": "فوق البلدة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_62": {
+    "text": "أسرار المياه الضحلة والسماء",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_63": {
+    "text": "المصعد السريع، أسرع!",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_64": {
+    "text": "اذهب إلى البلدة للعملات الحمراء",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_65": {
+    "text": "سباق سريع في وسط البلدة!",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_66": {
+    "text": "تسلق الجبل",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_67": {
+    "text": "سر قفص القرد",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_68": {
+    "text": "فطر مخيف وعملات حمراء",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_69": {
+    "text": "جانب الجبل الغامض",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_70": {
+    "text": "منظر خلاب من الجسر",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_71": {
+    "text": "أطلق نحو الفطر المنعزل",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_72": {
+    "text": "اقتلع زهرة البيرانا",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_73": {
+    "text": "قمة الجزيرة العملاقة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_74": {
+    "text": "إعادة السباق مع كوبا السريع",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_75": {
+    "text": "خمسة أسرار صغيرة جدا",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_76": {
+    "text": "عملات ويغلر الحمراء",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_77": {
+    "text": "اجعل ويغلر يتلوى",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_78": {
+    "text": "تدحرج إلى القفص",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_79": {
+    "text": "الحفرة والبندولات",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_80": {
+    "text": "تعلق بالعقرب",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_81": {
+    "text": "اسحق ثومب",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_82": {
+    "text": "قفزات موقوتة فوق القضبان المتحركة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_83": {
+    "text": "أوقف الزمن للعملات الحمراء",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_84": {
+    "text": "الطراد يعبر قوس قزح",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_85": {
+    "text": "البيت الكبير في السماء",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_86": {
+    "text": "عملات متجمعة في متاهة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_87": {
+    "text": "تأرجح مع النسيم",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_88": {
+    "text": "مثلثات ماكرة!",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_act_89": {
+    "text": "في مكان ما فوق قوس قزح",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_castle": {
+    "text": "نجوم القلعة السرية",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_secret": {
+    "text": "إحدى نجوم القلعة السرية!",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_hundred": {
+    "text": "نجمة المئة عملة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_mario": {
+    "text": "ماريو",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_hi_score": {
+    "text": "أفضل نتيجة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_my_score": {
+    "text": "نتيجتي",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_pause": {
+    "text": "إيقاف مؤقت",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_hud_congratulations": {
+    "text": "تهانينا",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_course": {
+    "text": "مرحلة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_myscore": {
+    "text": "نتيجتي",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_continue": {
+    "text": "متابعة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_exit_course": {
+    "text": "مغادرة المرحلة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_camera_angle_r": {
+    "text": "غير زاوية الكاميرا بزر R1",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_lakitu_mario": {
+    "text": "لاكيتو + ماريو",
+    "width": 80,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_lakitu_stop": {
+    "text": "لاكيتو + ثابتة",
+    "width": 80,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_normal_upclose": {
+    "text": "(عادية)(قريبة)",
+    "width": 80,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_normal_fixed": {
+    "text": "(عادية)(ثابتة)",
+    "width": 80,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_catch": {
+    "text": "حصلت عليها!",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_clear": {
+    "text": "اكتملت!",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_hud_hi_score": {
+    "text": "أفضل نتيجة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_save_and_continue": {
+    "text": "حفظ ومتابعة",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_save_and_quit": {
+    "text": "حفظ وخروج",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_continue_without_saving": {
+    "text": "متابعة دون حفظ",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_file_mario_exclamation": {
+    "text": "ماريو!",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_power_stars_restored": {
+    "text": "عادت قوة النجوم إلى القلعة...",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_thanks_to_you": {
+    "text": "...وكل ذلك بفضلك!",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_thank_you_mario": {
+    "text": "شكرا لك يا ماريو!",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_something_special": {
+    "text": "علينا أن نقدم لك شيئا مميزا...",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_listen_everybody": {
+    "text": "اسمعوا جميعا،",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_lets_have_cake": {
+    "text": "لنخبز كعكة شهية...",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_for_mario": {
+    "text": "...من أجل ماريو...",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  },
+  "overlay_file_mario_question": {
+    "text": "ماريو؟",
+    "width": 128,
+    "height": 20,
+    "fontSize": 10
+  }
+}
