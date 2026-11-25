@@ -63,7 +63,7 @@ void abstars_native_cheats_apply(struct MarioState *m) {
 }
 
 /* Called only from the paused game menu — no GoldHEN hook required.
- * L opens; D-pad navigates; A toggles; B/L returns; X clears all.
+ * L opens; D-pad navigates; A toggles; B/L returns; hold R and press Z to clear all.
  * Page moves automatically with selection. Reset toggles on game restart.
  */
 static int abstars_native_cheats_pause(void) {
@@ -101,7 +101,7 @@ static int abstars_native_cheats_pause(void) {
             }
         }
     }
-    if (pressed & X_BUTTON)
+    if ((gPlayer3Controller->buttonDown & R_TRIG) && (pressed & Z_TRIG))
         for (i = 0; i < ABSTARS_CHEAT_COUNT; ++i)
             sAbstarsCheatFlags[i] = 0;
 
@@ -150,7 +150,7 @@ static int abstars_native_cheats_pause(void) {
             sAbstarsCheatLabels[i], sAbstarsCheatFlags[i] ? "ON" : "OFF");
         print_text(32, 160 - (i - first) * 23, line);
     }
-    print_text(30, 16, "UP/DOWN, A TOGGLE, X RESET, B BACK");
+    print_text(30, 16, "UP/DOWN, A TOGGLE, R+Z RESET, B BACK");
 #endif
     return 1;
 }
@@ -180,7 +180,7 @@ CHEAT_LABELS = {
     "cheat_page2": {"text": "الصفحة 2 من 2", "width": 130, "height": 20, "fontSize": 11},
     "cheat_on": {"text": "مفعل", "width": 56, "height": 20, "fontSize": 12},
     "cheat_off": {"text": "معطل", "width": 56, "height": 20, "fontSize": 12},
-    "cheat_help": {"text": "الأسهم: اختيار   أ: تبديل   إكس: تصفير   ب: رجوع", "width": 290, "height": 20, "fontSize": 10},
+    "cheat_help": {"text": "الأسهم: اختيار   أ: تبديل   آر مع زد: تصفير   ب: رجوع", "width": 290, "height": 20, "fontSize": 10},
 }
 
 def main(root, check_only=False):
@@ -215,7 +215,7 @@ def main(root, check_only=False):
         return
     menu_file.write_text(menu, encoding="utf-8")
     mario_file.write_text(mario, encoding="utf-8")
-    ui_file.write_text(json.dumps(ui, ensure_ascii=False, indent=2)+"\\n", encoding="utf-8")
+    ui_file.write_text(json.dumps(ui, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     print("Native cheats and Arabic UI labels inserted; texture regeneration and compile required.")
     print("Pause -> L to open, D-pad, A toggle, B back.")
 
