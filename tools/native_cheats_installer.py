@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
-"""ABSTARS PS4 native cheat-menu prototype installer.
-Run after applying the existing Arabic patch to the pinned upstream port.
-ASCII fallback labels are temporary; Arabic rendering remains to be integrated.
+"""Install a prototype native cheat menu into the PS4 port source.
+
+Run after applying the pinned Arabic patch. The menu uses temporary ASCII
+labels; it is not a completed Arabic UI or tested PS4 release.
+
+Use --check to validate all source anchors without writing files.
 """
 from pathlib import Path
 import sys
+import argparse
 
 code=r'''
 /* ABSTARS Native Cheats v2 prototype (nonpersistent). */
@@ -24,6 +28,7 @@ void abstars_native_cheats_apply(struct MarioState *m) {
     if (sAbstarsCheatFlags[4] && m->controller &&
         (m->controller->buttonDown & A_BUTTON) && m->vel[1] < 30.0f)
         m->vel[1] = 30.0f;
+    /* Only adjust positive forward velocity to avoid backwards-motion bugs. */
     if (sAbstarsCheatFlags[5] && m->forwardVel > 5.0f &&
         m->forwardVel < 48.0f) m->forwardVel = 48.0f;
 }
@@ -32,6 +37,7 @@ static int abstars_native_cheats_pause(void) {
     int i;
     char line[80];
     if (!sAbstarsCheatMenuOpen) {
+        /* The pause-screen activation keeps normal Mario controls intact. */
         if (pressed & L_TRIG) { sAbstarsCheatMenuOpen = 1; return 1; }
         return 0;
     }
@@ -62,7 +68,7 @@ def replace_once(s, a, b, name):
         raise RuntimeError(f"{name}: expected one anchor, found {s.count(a)}")
     return s.replace(a, b, 1)
 
-def main(root):
+def main(root, check_only=False):
     menu_file=root/"src/game/ingame_menu.c"
     mario_file=root/"src/game/mario.c"
     menu=menu_file.read_text(encoding="utf-8")
@@ -81,10 +87,18 @@ def main(root):
     mario=replace_once(mario, "        update_mario_health(gMarioState);",
         "        update_mario_health(gMarioState);\n"
         "        abstars_native_cheats_apply(gMarioState);", "health hook")
+    if check_only:
+        print("CHECK PASSED: all required source anchors found; no changes written.")
+        return
     menu_file.write_text(menu, encoding="utf-8")
     mario_file.write_text(mario, encoding="utf-8")
-    print("Native cheats prototype inserted. Pause -> L to open, D-pad, A, B.")
+    print("Experimental native cheats inserted; compile/test required.")
+    print("Pause -> L to open, D-pad, A toggle, B back.")
 
 if __name__=="__main__":
-    if len(sys.argv)!=2: sys.exit("Usage: python3 native_cheats_installer.py <sm64-port-dir>")
-    main(Path(sys.argv[1]))
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("source_dir", type=Path)
+    parser.add_argument("--check", action="store_true",
+                        help="validate source anchors without writing changes")
+    args = parser.parse_args()
+    main(args.source_dir, check_only=args.check)
