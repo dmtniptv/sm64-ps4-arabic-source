@@ -127,10 +127,11 @@ static int abstars_native_cheats_pause(void) {
             page ? ARABIC_UI_CHEAT_PAGE2 : ARABIC_UI_CHEAT_PAGE1, 160, 192);
         for (i = first; i < last; ++i) {
             s16 y = 164 - (i - first) * 23;
-            if (i == sAbstarsCheatSelection)
+            if (i == sAbstarsCheatSelection) {
                 gDPSetEnvColor(gDisplayListHead++, 255, 220, 90, 255);
-            else
+            } else {
                 gDPSetEnvColor(gDisplayListHead++, 250, 250, 250, 255);
+            }
             render_arabic_ui_text_at(labels[i],
                 295 - arabic_ui_text_width[labels[i]], y);
             render_arabic_ui_text_at(
