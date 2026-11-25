@@ -1,0 +1,49 @@
+name: Native cheats source integration check
+on:
+  push:
+    branches: [native-cheats-v2]
+  workflow_dispatch:
+
+jobs:
+  source-integration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check native cheat installer syntax
+        run: python -m py_compile tools/native_cheats_installer.py
+      - name: Fetch pinned upstream PS4 port
+        run: |
+          git clone --branch ps4 --recurse-submodules https://github.com/OsirizX/sm64-port.git /tmp/sm64-port
+          git -C /tmp/sm64-port checkout --detach 05356eef0b5b8bd595c35bdf0061eb22f54e9b4e
+          git -C /tmp/sm64-port submodule update --init --recursive
+      - name: Validate and apply existing Arabic patch
+        run: |
+          git -C /tmp/sm64-port apply --check "$GITHUB_WORKSPACE/sm64-ps4-arabic.patch"
+          git -C /tmp/sm64-port apply "$GITHUB_WORKSPACE/sm64-ps4-arabic.patch"
+      - name: Verify native cheat menu installer
+        run: |
+          python tools/native_cheats_installer.py --check /tmp/sm64-port
+          python tools/native_cheats_installer.py /tmp/sm64-port
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          base=Path('/tmp/sm64-port')
+          menu=(base/'src/game/ingame_menu.c').read_text()
+          mario=(base/'src/game/mario.c').read_text()
+          ui=json.loads((base/'text/ar/ui.json').read_text())
+          for marker in ('ARABIC_UI_CHEAT_TITLE','ARABIC_UI_CHEAT_HEALTH','ARABIC_UI_CHEAT_HELP'):
+              assert marker in menu, marker
+          assert 'abstars_native_cheats_apply(gMarioState)' in mario
+          assert len([key for key in ui if key.startswith('cheat_')]) == 10
+          print('Native cheats source patch applied, 10 Arabic UI labels added.')
+          PY
+      - name: Ensure proprietary ROMs are not committed
+        run: |
+          if git ls-files | grep -Ei '(^|/)(baserom\..*\.z64|.*\.pkg)$'; then
+            echo 'Proprietary ROMs or PKGs must not be committed.' >&2
+            exit 1
+          fi
