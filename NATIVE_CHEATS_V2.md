@@ -1,43 +1,60 @@
-# ABSTARS Super Mario 64 PS4 — Native Cheats v2 (EXPERIMENTAL)
+# ABSTARS Super Mario 64 PS4 — Native Cheats v2 (WORK IN PROGRESS)
 
-**Status: prototype committed, not built, not tested on PS4. This is not a final PKG.**
+**Not a compiled or tested PS4 PKG.** This branch preserves Arabic v1.0 on `main`.
 
-This branch keeps the existing Arabic v1.0 release on `main` untouched.
+## Integrated source modifications
 
-## Current code
+`tools/native_cheats_installer.py` patches the already localized PS4 port source and adds:
+- Native pause-screen cheat menu logic (L opens while paused; Up/Down, A toggle, B close)
+- Infinite health; 99 lives; minimum 99 coins; extended current special-cap timer
+- Experimental moon-jump and forward speed boosts
+- Arabic right-to-left screen labels using **the existing generated Arabic UI texture system**, not direct UTF-8 rendering.
+- No save editor, permanent 120-star grant, level unlock, or settings persistence.
 
-`tools/native_cheats_installer.py` adds a basic native cheat submenu to the upstream PS4 source by changing `src/game/ingame_menu.c` and `src/game/mario.c`.
+Arabic labels cover the menu heading, six cheat options, on/off states, and control instructions. The existing `tools/arabic/generate-ui-textures.ps1` must be run after installing the changes to update `text/ar/generated/ui_textures.inc.c` and `ui_text_ids.h`.
 
-The prototype offers six **session-only** options:
-- Refill health to 0x880
-- Restore 99 lives
-- Keep at least 99 coins
-- Extend active special cap timer
-- Moon Jump (while holding A)
-- Increase forward speed
+## Build instructions
 
-Open the ordinary in-game **pause menu**, then press **L** to open the prototype cheats screen. Use Up/Down to select, A to toggle, and B or L to leave the cheat screen. Options default OFF and reset after relaunch. This interaction is **not tested** on hardware.
+1. Set up OpenOrbis 0.5, the original US `baserom.us.z64` from your own copy, Git, Python 3 and PowerShell with System.Drawing support. Obtain a Unicode Arabic font you are licensed to use. Do not upload your ROM to a public repository.
+2. Clone the upstream PS4 port and switch to the pinned revision:
 
-**Important**: The prototype displays **English ASCII labels** as placeholders, NOT Arabic RTL. The prior Arabic localization patch covers the ordinary game text, but this extra menu still needs integration with the existing Arabic text renderer/texture assets. No save modification, full level unlock, or 120-star grant has been implemented.
+```sh
+git clone --branch ps4 --recurse-submodules https://github.com/OsirizX/sm64-port.git
+cd sm64-port
+git checkout --detach 05356eef0b5b8bd595c35bdf0061eb22f54e9b4e
+git submodule update --init --recursive
+```
 
-## Reproduce in a licensed build environment
+3. Clone this Arabic repo at `native-cheats-v2` in a sibling directory, then apply `sm64-ps4-arabic.patch` to the upstream port with `git apply --check` followed by `git apply`.
+4. Validate and apply the menu installer:
 
-1. Prepare the original US ROM from your own copy as `baserom.us.z64` and the OpenOrbis PS4 toolchain. Neither is provided here.
-2. Clone the upstream PS4 branch and check out `05356eef0b5b8bd595c35bdf0061eb22f54e9b4e` as specified in the Arabic edition's README.
-3. Apply the Arabic localization patch `sm64-ps4-arabic.patch` from this repo.
-4. Run `python3 /path/to/this/repo/tools/native_cheats_installer.py /path/to/sm64-port`.
-5. Review the diff carefully for interactions with the Arabic patch.
-6. Compile with `make -j2 VERSION=us TARGET_PS4=1 ARABIC=1 pkg`.
+```sh
+python3 ../sm64-ps4-arabic-source/tools/native_cheats_installer.py --check .
+python3 ../sm64-ps4-arabic-source/tools/native_cheats_installer.py .
+```
 
-The script verifies source anchors before writing, and stops if the source layout differs. Re-run only if you mean to keep the modifications.
+5. Regenerate **Arabic UI textures** from the updated JSON (PowerShell on Windows, with a valid local font path):
 
-## Before a releasable v2.0
+```powershell
+powershell -ExecutionPolicy Bypass -File tools/arabic/generate-ui-textures.ps1 -FontPath "C:\\path\\to\\your\\licensed-arabic-font.ttf" -OutputDirectory text/ar/generated
+```
 
-- Ensure compilation succeeds with the pinned upstream and Arabic patch.
-- Integrate fully joined RTL Arabic strings and navigation/layout.
-- Test opening, closing, toggling, pause/unpause and controller inputs on PS4 9.00.
-- Validate Moon Jump and speed behavior, including underwater, flying, cutscenes and death.
-- Verify save compatibility and avoid modifying permanent collectibles inadvertently.
-- Add a code review, game testing and a new release build.
+6. Check `text/ar/generated/ui_text_ids.h` contains `ARABIC_UI_CHEAT_TITLE`, `ARABIC_UI_CHEAT_HEALTH`, and the other menu IDs. Verify the generated images/textures are valid using the existing Arabic validators where supported.
+7. Put `baserom.us.z64` in the source root and build:
 
-Do not upload or flash an untested game package over the existing working release.
+```sh
+make -j2 VERSION=us TARGET_PS4=1 ARABIC=1 pkg
+```
+
+**Do not install a build without testing it first.**
+
+## Still to verify
+
+- That the C sources compile and the generated texture tables link correctly.
+- That the PS4 controller maps the pause-menu L button as expected and the menu works across pause modes.
+- Visual RTL alignment, texture contrast and readability on TV.
+- Safety of movement cheats during warps, death, cutscenes and water levels.
+- Correct game save handling and compatibility with the installed PKG.
+- Build output, launch and stability on PS4 firmware 9.00.
+
+This is *development source*, not a final release or finished package. The exact blocked build prerequisites in this session are a runnable OpenOrbis environment, the legal ROM input, Arabic font path, and a PS4 runtime test.
