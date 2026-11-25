@@ -196,7 +196,7 @@ def main(root, check_only=False):
         if key in ui and ui[key] != entry:
             raise RuntimeError(f"Conflicting Arabic UI label: {key}")
         ui[key]=entry
-    if "ABSTARS Native Cheats v2 prototype" in menu:
+    if "ABSTARS Native Cheats v2" in menu:
         print("Already installed")
         return
     menu=replace_once(menu, "#include <ultra64.h>",
@@ -217,7 +217,7 @@ def main(root, check_only=False):
     mario_file.write_text(mario, encoding="utf-8")
     ui_file.write_text(json.dumps(ui, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     print("Native cheats and Arabic UI labels inserted; texture regeneration and compile required.")
-    print("Pause -> L to open, D-pad, A toggle, B back.")
+    print("Pause -> L to open, D-pad Up/Down, A toggle, B return, hold R + tap Z to reset.")
 
 if __name__=="__main__":
     parser = argparse.ArgumentParser(description=__doc__)
