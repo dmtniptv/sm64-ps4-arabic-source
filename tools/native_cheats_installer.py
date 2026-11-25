@@ -9,6 +9,7 @@ Use --check to validate all source anchors without writing files.
 from pathlib import Path
 import sys
 import argparse
+import json
 
 code=r'''
 /* ABSTARS Native Cheats v2 prototype (nonpersistent). */
@@ -51,6 +52,31 @@ static int abstars_native_cheats_pause(void) {
         (sAbstarsCheatSelection + 1) % 6;
     if (pressed & A_BUTTON) sAbstarsCheatFlags[sAbstarsCheatSelection] ^= 1;
     shade_screen();
+#ifdef ENABLE_ARABIC
+    /* Arabic strings are pre-rasterized by the existing localization pipeline. */
+    gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
+    gDPSetEnvColor(gDisplayListHead++, 255, 232, 150, 255);
+    render_arabic_ui_text_centered(ARABIC_UI_CHEAT_TITLE, 160, 206);
+    for (i = 0; i < 6; i++) {
+        static const s16 labels[6] = {
+            ARABIC_UI_CHEAT_HEALTH, ARABIC_UI_CHEAT_LIVES,
+            ARABIC_UI_CHEAT_COINS, ARABIC_UI_CHEAT_CAP,
+            ARABIC_UI_CHEAT_JUMP, ARABIC_UI_CHEAT_SPEED
+        };
+        s16 y = 180 - i * 23;
+        if (i == sAbstarsCheatSelection)
+            gDPSetEnvColor(gDisplayListHead++, 255, 220, 90, 255);
+        else
+            gDPSetEnvColor(gDisplayListHead++, 250, 250, 250, 255);
+        render_arabic_ui_text_at(labels[i], 290 - arabic_ui_text_width[labels[i]], y);
+        render_arabic_ui_text_at(
+            sAbstarsCheatFlags[i] ? ARABIC_UI_CHEAT_ON : ARABIC_UI_CHEAT_OFF,
+            26, y);
+    }
+    gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, 255);
+    render_arabic_ui_text_centered(ARABIC_UI_CHEAT_HELP, 160, 20);
+    gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
+#else
     print_text(65, 24, "ABSTARS CHEAT MENU");
     print_text(35, 42, "UP/DOWN SELECT  A TOGGLE  B BACK");
     for (i = 0; i < 6; i++) {
@@ -59,6 +85,7 @@ static int abstars_native_cheats_pause(void) {
             sAbstarsCheatLabels[i], sAbstarsCheatFlags[i] ? "ON" : "OFF");
         print_text(55, 64 + i * 19, line);
     }
+#endif
     return 1;
 }
 '''
@@ -68,11 +95,32 @@ def replace_once(s, a, b, name):
         raise RuntimeError(f"{name}: expected one anchor, found {s.count(a)}")
     return s.replace(a, b, 1)
 
+CHEAT_LABELS = {
+    "cheat_title": {"text": "قائمة الغش", "width": 160, "height": 20, "fontSize": 13},
+    "cheat_health": {"text": "صحة لا نهائية", "width": 178, "height": 20, "fontSize": 12},
+    "cheat_lives": {"text": "تسع وتسعون حياة", "width": 178, "height": 20, "fontSize": 12},
+    "cheat_coins": {"text": "تسع وتسعون قطعة نقدية", "width": 178, "height": 20, "fontSize": 12},
+    "cheat_cap": {"text": "مدة القبعة بلا حدود", "width": 178, "height": 20, "fontSize": 12},
+    "cheat_jump": {"text": "قفزة عالية", "width": 178, "height": 20, "fontSize": 12},
+    "cheat_speed": {"text": "سرعة خارقة", "width": 178, "height": 20, "fontSize": 12},
+    "cheat_on": {"text": "تشغيل", "width": 56, "height": 20, "fontSize": 12},
+    "cheat_off": {"text": "إيقاف", "width": 56, "height": 20, "fontSize": 12},
+    "cheat_help": {"text": "الأسهم: اختيار   أ: تبديل   ب: رجوع", "width": 260, "height": 20, "fontSize": 11},
+}
+
 def main(root, check_only=False):
     menu_file=root/"src/game/ingame_menu.c"
     mario_file=root/"src/game/mario.c"
     menu=menu_file.read_text(encoding="utf-8")
     mario=mario_file.read_text(encoding="utf-8")
+    ui_file=root/"text/ar/ui.json"
+    if not ui_file.is_file():
+        raise RuntimeError("Arabic localization must be applied first (missing text/ar/ui.json)")
+    ui=json.loads(ui_file.read_text(encoding="utf-8"))
+    for key, entry in CHEAT_LABELS.items():
+        if key in ui and ui[key] != entry:
+            raise RuntimeError(f"Conflicting Arabic UI label: {key}")
+        ui[key]=entry
     if "ABSTARS Native Cheats v2 prototype" in menu:
         print("Already installed")
         return
@@ -92,7 +140,8 @@ def main(root, check_only=False):
         return
     menu_file.write_text(menu, encoding="utf-8")
     mario_file.write_text(mario, encoding="utf-8")
-    print("Experimental native cheats inserted; compile/test required.")
+    ui_file.write_text(json.dumps(ui, ensure_ascii=False, indent=2)+"\\n", encoding="utf-8")
+    print("Native cheats and Arabic UI labels inserted; texture regeneration and compile required.")
     print("Pause -> L to open, D-pad, A toggle, B back.")
 
 if __name__=="__main__":
